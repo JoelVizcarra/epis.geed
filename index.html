@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>GEED Hash Examples</title>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+      <a class="navbar-brand" href="#">GEED Project</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container pt-4">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+          aria-controls="pills-home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-authModule-tab" data-toggle="pill" href="#pills-authModule" role="tab"
+          aria-controls="pills-authModule" aria-selected="false">Auth Module</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-dataIntegrity-tab" data-toggle="pill" href="#pills-dataIntegrity" role="tab"
+          aria-controls="pills-dataIntegrity" aria-selected="false">Data Integrity</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <p class="px-5 text-justify">
+          En esta app web presentamos dos Aplicaciones muy importantes para los algoritmos de hash.
+        </p>
+        <h4 class="px-5 font-weight-bold">Autenticación de usuarios</h3>
+          <p class="px-5 text-justify">
+            Es muy usado para almacenar las contraseñas de las cuentas de
+            usuario,
+            asegurando asi que no puedan robar contraseñas en texto plano, ya que es casi imposible rescatar una
+            contraseña en texto plano de un hash.
+          </p>
+          <h4 class="px-5 font-weight-bold">Integridad de Datos</h3>
+
+            <p class="px-5 text-justify">
+              Si tenemos un texto o data que queremos proteger de cambios, es
+              posible
+              generar un
+              hash de esta y verificar si este cambio, de esta manera podemos saber si la data fue alterada sin
+              exponerla.
+            </p>
+      </div>
+      <div class="tab-pane fade" id="pills-authModule" role="tabpanel" aria-labelledby="pills-authModule-tab">
+        <p class="px-5 text-justify">Para un modulo de autenticacion por medio de un usuario y contraseña, nunca debe
+          guardarse la contraseña como
+          texto plano,
+          si no aplicandole un algoritmo de hash, en este caso SHA256, de esta manera aunque se logre ingresar a la Base
+          de datos,
+          no sera posible ingresar tan facilmente a las cuentas de usuario.
+        </p>
+        <div class="row py-3 justify-content-around">
+          <div class="col-5">
+            <h2>Register User</h2>
+            <div class="form-group">
+              <label for="registerUser">Username</label>
+              <input type="text" class="form-control" id="registerUser" aria-describedby="emailHelp"
+                placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="registerPass">Password</label>
+              <input type="password" class="form-control" id="registerPass" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary"
+              onclick="register($('#registerUser').val(),$('#registerPass').val())">Register</button>
+          </div>
+          <div class="col-5">
+            <h2>Login User</h2>
+            <div class="form-group">
+              <label for="loginUser">Username</label>
+              <input type="text" class="form-control" id="loginUser" aria-describedby="emailHelp"
+                placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="loginPass">Password</label>
+              <input type="password" class="form-control" id="loginPass" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary"
+              onclick="login($('#loginUser').val(),$('#loginPass').val())">Login</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="tab-pane fade" id="pills-dataIntegrity" role="tabpanel" aria-labelledby="pills-dataIntegrity-tab">
+        Data Integrity
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="src/hashes.js"></script>
+
+  <script>
+    function register(user, pass) {
+      var users = [];
+      if (window.localStorage.getItem('users') != null)
+        users = JSON.parse(window.localStorage.getItem('users'));
+      var SHA256 = new Hashes.SHA256
+      pass = SHA256.hex(pass);
+      alert('username: ' + user + '\npassword(hasheada): ' + pass);
+      users.push({ user: user, pass: pass });
+      window.localStorage.setItem('users', JSON.stringify(users));
+      alert('Successfully registered');
+    }
+    function login(user, pass) {
+      var users = [];
+      if (window.localStorage.getItem('users') != null)
+        users = JSON.parse(window.localStorage.getItem('users'));
+      else {
+        alert('There are not registered users');
+        return;
+      }
+      var SHA256 = new Hashes.SHA256
+      pass = SHA256.hex(pass);
+      var flag = 0;
+      users.forEach(function (userObj) {
+        if (userObj.user == user && userObj.pass == pass) {
+          flag = 1;
+          return;
+        }
+      });
+      if (flag)
+        alert('Succesfully Logged In');
+      else
+        alert('Incorrect username or password.');
+    }
+  </script>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
