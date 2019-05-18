@@ -113,7 +113,18 @@
 
       </div>
       <div class="tab-pane fade" id="pills-dataIntegrity" role="tabpanel" aria-labelledby="pills-dataIntegrity-tab">
-        Data Integrity
+        <h2>Data Integrity</h2>
+        <p>
+          Los algoritmos de hash tambien sirven para verificar si un archivo o dato fue alterado o no, ya que el
+          hash que se genera es único.
+        </p>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Texto de ejemplo</label>
+          <textarea class="form-control" id="text" onkeyup="" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1" id="labelHash"></label>
+        </div>
       </div>
     </div>
   </div>
@@ -168,7 +179,11 @@
   </script>
 
   <script>
-
+    function protect(text) {
+      var SHA256 = new Hashes.SHA256
+      text = SHA256.hex(text);
+      document.getElementById('labelHash').html(text);
+    }
   </script>
 </body>
 
