@@ -183,6 +183,7 @@
     function protect(text) {
       var SHA256 = new Hashes.SHA256
       text = SHA256.hex(text);
+      console.log(text);
       document.getElementById('text').innerHTML = text;
     }
   </script>
