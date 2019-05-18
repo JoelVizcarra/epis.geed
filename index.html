@@ -120,7 +120,7 @@
         </p>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Texto de ejemplo</label>
-          <textarea class="form-control" id="text" onkeyup="console.log(this.innerHTML);" rows="3"></textarea>
+          <textarea class="form-control" id="text" onkeyup="protect(this.value);" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Hash del texto</label>
@@ -181,10 +181,9 @@
 
   <script>
     function protect(text) {
-      console.log(text);
       var SHA256 = new Hashes.SHA256
       text = SHA256.hex(text);
-      document.getElementById('text').innerHTML = text;
+      document.getElementById('text').value = text;
     }
   </script>
 </body>
