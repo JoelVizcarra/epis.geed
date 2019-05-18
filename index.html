@@ -181,6 +181,10 @@
 
   <script>
     function protect(text) {
+      if (text == "") {
+        document.getElementById('text').value = "";
+        return;
+      }
       var SHA256 = new Hashes.SHA256
       text = SHA256.hex(text);
       document.getElementById('text').value = text;
